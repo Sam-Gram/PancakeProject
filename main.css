@@ -1,0 +1,7 @@
+.pancake {
+  width: 100px;
+  hieght: 10px;
+  background-color: black;
+  border-radius: 10px;
+  background: linear-gradient(to right, black, grey );
+}
