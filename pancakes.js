@@ -25,8 +25,12 @@ var PancakeStack = React.createClass({
   changeStack: function (pVal) {
       
       var pancakes = this.state.pancakeList
-      pancakes.splice(pancakes.indexOf(pVal), 1)
-      pancakes.unshift(pVal)
+      var end = pancakes.indexOf(pVal)
+      for (var i = 0; i < end/2; i++) {
+	  var temp = pancakes[i]
+	  pancakes[i] = pancakes[end-i]
+	  pancakes[end-i] = temp
+      }
       this.setState({
 	  pancakeList: pancakes
       })
